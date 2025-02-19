@@ -65,6 +65,12 @@
   <div id="enlargedContainer" onclick="hideEnlarged()"></div>
 </div>
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // agregar lazy loading a todas las imágenes
+  document.querySelectorAll('img').forEach(function(img){
+    img.setAttribute('loading', 'lazy');
+  });
+  
 function showEnlarged(src) {
   var container = document.getElementById('enlargedContainer');
   container.innerHTML = '<img src="' + src + '">';
